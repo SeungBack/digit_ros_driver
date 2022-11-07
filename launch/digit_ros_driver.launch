@@ -1,0 +1,14 @@
+<launch>
+    
+    <arg name="serial" default="D20453" />  <!-- serial number of the digit -->
+    <arg name="resolution" default="QVGA" /> <!-- QVGA / VGA -->
+    <arg name="fps" default="30fps" /> <!-- 15fps, 30fps, 60fps -->
+    
+    <node name="digit_ros_driver" pkg="digit_ros_driver" 
+            type="digit_ros_driver.py" respawn="false" output="screen" >
+        <param name="serial" value="$(arg serial)" />
+        <param name="resolution" value="$(arg resolution)" />
+        <param name="fps" value="$(arg fps)" />
+    </node> 
+    
+</launch>
